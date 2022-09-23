@@ -115,11 +115,11 @@ def run(playwright: Playwright) -> None:
 
     # Click text=Finalizar venta
     page.locator("text=Finalizar venta").click()
-    expect(page.locator(".status")).to_have_text("COMPRA REALIZADA CON EXITO")
     #---------------Bug--------------#
     page.wait_for_timeout(3000)#3 SECONDS
     page.screenshot(path="screenshots/ModuloPOS8.png")
     # Click text=3.40
+    expect(page.locator(".status")).to_have_text("COMPRA REALIZADA CON EXITO")
     
 
     # EXPECT Message  
